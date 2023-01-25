@@ -1,5 +1,6 @@
 package onboarding;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +9,28 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ApplicationTest {
+    @Test
+    @DisplayName("자리수 연산 테스트")
+    void calSum(){
+        //given
+        int num = 197;
+
+        int sumAdd = 0;
+        int sumMul = 1;
+
+        //when
+        while(true){
+            if(num == 0)
+                break;
+
+            sumAdd += num % 10;
+            sumMul *= num % 10;
+            num /= 10;
+        }
+
+        //then
+        System.out.println("합: " + sumAdd + " 곱 : "+sumMul);
+    }
     @Nested
     class Problem1Test {
         @Test
